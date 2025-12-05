@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox spacing="20.0" styleClass="content-area" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schoolmanagement.controllers.ClassesController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Classes" styleClass="header-title" />
+                <HBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" styleClass="search-box" maxWidth="300">
+                    <children>
+                        <FontIcon iconLiteral="fas-search" iconColor="#7f8c8d" />
+                        <TextField fx:id="searchField" promptText="Search classes..." styleClass="transparent-field" />
+                    </children>
+                </HBox>
+                <HBox HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleAddClass" text="Add New Class" styleClass="btn-primary">
+                    <graphic><FontIcon iconLiteral="fas-plus" iconColor="WHITE" /></graphic>
+                </Button>
+            </children>
+        </HBox>
+        <TableView fx:id="classTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50.0" />
+                <TableColumn fx:id="colClassName" text="Class Name" prefWidth="150.0" />
+                <TableColumn fx:id="colSection" text="Section" prefWidth="100.0" />
+                <TableColumn fx:id="colTeacher" text="Assigned Teacher" prefWidth="200.0" />
+                <TableColumn fx:id="colActions" text="Actions" prefWidth="150.0" />
+            </columns>
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+        </TableView>
+    </children>
+    <padding><Insets top="20.0" right="30.0" bottom="30.0" left="30.0" /></padding>
+</VBox>

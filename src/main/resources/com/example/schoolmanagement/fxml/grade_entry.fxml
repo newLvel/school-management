@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" styleClass="content-area" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schoolmanagement.controllers.GradeEntryController">
+    <children>
+        <VBox spacing="5.0">
+            <children>
+                <Label fx:id="examTitleLabel" text="Grading">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="classLabel" text="Class: " textFill="#7f8c8d" />
+            </children>
+        </VBox>
+        
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <children>
+                <Label text="Select Subject:" />
+                <ComboBox fx:id="subjectComboBox" prefWidth="200.0" promptText="Choose Subject..." />
+                <Label text="(Double-click cells to edit scores)" textFill="#7f8c8d" style="-fx-font-style: italic;" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="gradeTable" VBox.vgrow="ALWAYS" editable="true">
+            <columns>
+                <TableColumn fx:id="colStudentName" prefWidth="200.0" text="Student Name" editable="false" />
+                <TableColumn fx:id="colScore" prefWidth="100.0" text="Score" />
+                <TableColumn fx:id="colRemarks" prefWidth="250.0" text="Remarks" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

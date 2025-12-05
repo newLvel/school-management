@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<VBox spacing="20.0" style="-fx-background-color: #f3f4f6;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schoolmanagement.controllers.DashboardController">
+    <children>
+        <!-- Row 1: Stats Cards -->
+        <HBox spacing="20.0">
+            <children>
+                <!-- Card 1: Students -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <StackPane styleClass="stat-icon-container, icon-bg-purple">
+                            <FontIcon iconLiteral="fas-user-graduate" iconSize="20" styleClass="icon-purple" />
+                        </StackPane>
+                        <VBox>
+                            <Label styleClass="stat-card-title" text="Students" />
+                            <Label fx:id="studentCountLabel" styleClass="stat-card-value" text="1260" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Card 2: Teachers -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <StackPane styleClass="stat-icon-container, icon-bg-orange">
+                            <FontIcon iconLiteral="fas-chalkboard-teacher" iconSize="20" styleClass="icon-orange" />
+                        </StackPane>
+                        <VBox>
+                            <Label styleClass="stat-card-title" text="Teachers" />
+                            <Label fx:id="teacherCountLabel" styleClass="stat-card-value" text="224" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Card 3: Parents -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <StackPane styleClass="stat-icon-container, icon-bg-yellow">
+                            <FontIcon iconLiteral="fas-user-friends" iconSize="20" styleClass="icon-yellow" />
+                        </StackPane>
+                        <VBox>
+                            <Label styleClass="stat-card-title" text="Parents" />
+                            <Label fx:id="parentCountLabel" styleClass="stat-card-value" text="840" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Card 4: Earnings -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <StackPane styleClass="stat-icon-container, icon-bg-green">
+                            <FontIcon iconLiteral="fas-dollar-sign" iconSize="20" styleClass="icon-green" />
+                        </StackPane>
+                        <VBox>
+                            <Label styleClass="stat-card-title" text="Earnings" />
+                            <Label fx:id="earningsLabel" styleClass="stat-card-value" text="\$54000" />
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+
+        <!-- Row 2: Charts -->
+        <GridPane hgap="20.0" vgap="20.0">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="65.0" />
+                <ColumnConstraints percentWidth="35.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <!-- Earnings Chart -->
+                <VBox styleClass="card" GridPane.columnIndex="0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="chart-title" text="Earnings" />
+                              <HBox HBox.hgrow="ALWAYS" />
+                              <Label text="2023" textFill="#94a3b8" />
+                           </children>
+                        </HBox>
+                        <BarChart fx:id="earningsChart" legendSide="TOP" animated="false" verticalGridLinesVisible="false">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </BarChart>
+                    </children>
+                </VBox>
+
+                <!-- Students Breakdown Chart -->
+                <VBox styleClass="card" GridPane.columnIndex="1">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="chart-title" text="Students" />
+                              <HBox HBox.hgrow="ALWAYS" />
+                              <FontIcon iconLiteral="fas-ellipsis-h" iconColor="#94a3b8" />
+                           </children>
+                        </HBox>
+                        <PieChart fx:id="studentsPieChart" labelsVisible="false" legendSide="BOTTOM" />
+                        <HBox alignment="CENTER" spacing="20.0">
+                            <Label text="55% Male" style="-fx-text-fill: #f97316; -fx-font-weight:bold;" />
+                            <Label text="45% Female" style="-fx-text-fill: #1e293b; -fx-font-weight:bold;" />
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+</VBox>

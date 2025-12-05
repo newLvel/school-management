@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schoolmanagement.controllers.MainLayoutController">
+   <left>
+      <VBox prefHeight="800.0" prefWidth="260.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="sidebar-header">
+               <children>
+                  <FontIcon iconLiteral="fas-school" iconSize="32" iconColor="WHITE" />
+                  <Label styleClass="sidebar-title" text="EduManager" />
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="20.0" top="30.0" />
+               </padding>
+            </HBox>
+            
+            <Button mnemonicParsing="false" onAction="#showDashboard" styleClass="sidebar-button" text="Dashboard">
+               <graphic>
+                  <FontIcon iconLiteral="fas-tachometer-alt" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showStudents" styleClass="sidebar-button" text="Students">
+               <graphic>
+                  <FontIcon iconLiteral="fas-user-graduate" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showTeachers" styleClass="sidebar-button" text="Teachers">
+               <graphic>
+                  <FontIcon iconLiteral="fas-chalkboard-teacher" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showClasses" styleClass="sidebar-button" text="Classes">
+               <graphic>
+                  <FontIcon iconLiteral="fas-building" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showParents" styleClass="sidebar-button" text="Parents">
+               <graphic>
+                  <FontIcon iconLiteral="fas-user-friends" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showExams" styleClass="sidebar-button" text="Exams">
+               <graphic>
+                  <FontIcon iconLiteral="fas-edit" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showTransport" styleClass="sidebar-button" text="Transport">
+               <graphic>
+                  <FontIcon iconLiteral="fas-bus" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showSettings" styleClass="sidebar-button" text="Settings">
+               <graphic>
+                  <FontIcon iconLiteral="fas-cog" iconSize="20" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <!-- Top Header -->
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" styleClass="top-header">
+               <children>
+                  <Label text="Dashboard Overview" styleClass="header-title" />
+                  <HBox HBox.hgrow="ALWAYS" /> <!-- Spacer -->
+                  
+                  <HBox alignment="CENTER_LEFT" styleClass="search-box">
+                      <FontIcon iconLiteral="fas-search" iconColor="#7f8c8d" />
+                      <TextField fx:id="globalSearchField" promptText="Search anything..." styleClass="transparent-field" />
+                  </HBox>
+                  
+                  <HBox alignment="CENTER" spacing="15.0">
+                      <Button styleClass="icon-button">
+                          <graphic>
+                              <FontIcon iconLiteral="fas-bell" iconSize="20" iconColor="#7f8c8d" />
+                          </graphic>
+                      </Button>
+                      <Button styleClass="icon-button">
+                          <graphic>
+                              <FontIcon iconLiteral="fas-user-circle" iconSize="24" iconColor="#7f8c8d" />
+                          </graphic>
+                      </Button>
+                      <VBox alignment="CENTER_LEFT">
+                          <Label text="Admin User" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                          <Label text="Super Admin" style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" />
+                      </VBox>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            
+            <!-- Content Area -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS" styleClass="content-background" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
