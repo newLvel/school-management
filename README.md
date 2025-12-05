@@ -14,36 +14,75 @@ This is a comprehensive school management system built with JavaFX and SQLite.
 
 ## How to Run
 
+
+
 ### Prerequisites
 
-- Java JDK 17 or higher
-- Apache Maven
+
+
+-   Java JDK 17 or higher
+
+
 
 ### Running the Application
+
+
+
+The project includes the Maven Wrapper, which means you **do not** need to have Maven installed on your system. The wrapper script will automatically download the correct version for you.
+
+
 
 1.  **Clone the repository:**
 
     ```bash
+
     git clone <repository-url>
+
     cd SchoolManagement
+
     ```
 
-2.  **Run with Maven:**
-    The project is configured to run easily with the JavaFX Maven plugin. Execute the following command in the project root:
+
+
+2.  **Run with the Maven Wrapper:**
+
+    Open a terminal in the project root and execute the appropriate command for your operating system:
+
+
+
+    **For Windows (Command Prompt or PowerShell):**
 
     ```powershell
-    # For Windows (Powershell)
-    $env:JAVA_HOME = "C:\Program Files\Java\jdk-17"; .\mvnw.cmd clean javafx:run
 
-    # For macOS/Linux
-    export JAVA_HOME="/path/to/your/jdk-17"
-    ./mvnw clean javafx:run
+    # The script will download Maven if you don't have it.
+
+    .\mvnw.cmd clean javafx:run
+
     ```
 
+
+
+    **For macOS/Linux:**
+
+    ```bash
+
+    # The script will download Maven if you don't have it.
+
+    ./mvnw clean javafx:run
+
+    ```
+
+
+
 3.  **Login:**
+
     The application will start, and a database file `school_management.db` will be created with mock data.
-    - **Username**: `admin`
-    - **Password**: `admin`
+
+    -   **Username**: `admin`
+
+    -   **Password**: `admin`
+
+
 
 ## Standalone Application
 
